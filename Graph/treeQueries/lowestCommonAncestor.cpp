@@ -34,7 +34,7 @@ void Dfs(int u) {
     }
 }
 
-int LCA(int u, int v) {
+int findLCA(int u, int v) {
     if (high[u] < high[v]) return LCA(v, u);
 
     for (int j = LOG; j >= 0; j--) if (high[par[u][j]] >= high[v]) u = par[u][j];
@@ -46,20 +46,23 @@ int LCA(int u, int v) {
     return par[u][0];
 }
 
-void Process() {
+void prepareLCA() {
     high.assign(n + 1, 0); high[0] = -1; dist.assign(n + 1, 0); par.assign(n + 1, vector<int> (LOG + 1, 0));
 
     Dfs(1);
 
     for (int j = 1; j <= LOG; j++) for (int i = 1; i <= n; i++) par[i][j] = par[par[i][j - 1]][j - 1];
+}
 
+void Process() {
+    prepareLCA();
 
     int q; cin >> q;
 
     while (q--) {
         int u, v; cin >> u >> v;
 
-        cout << dist[u] + dist[v] - 2 * dist[LCA(u, v)] << '\n';
+        cout << dist[u] + dist[v] - 2 * dist[findLCA(u, v)] << '\n';
     }
 }
 
