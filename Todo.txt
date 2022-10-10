@@ -1,8 +1,8 @@
-✓	01. RangeMinimumQueries 	(RMQ)
-✓	02. SegmentTree 			    (ST)
-✓	03. MinCostFlow 			    (MCF)
+✓	01. (RMQ) RangeMinimumQueries 	
+✓	02. (ST) SegmentTree 			    
+✓	03. (MCF) MinCostFlow 			    
 ✓	04. MaximumFlow
 ✓	05. Dijkstra
-✓	06. DisjointSet 			    (DSU)
-✓	07. LowestCommonAncestor 	(LCA)
+✓	06. (DSU) DisjointSet 			    
+✓	07. (LCA) LowestCommonAncestor 	
 ✓	08. EulerianPath	
