@@ -1,8 +1,13 @@
-✓	01. (RMQ) RangeMinimumQueries 	
-✓	02. (ST) SegmentTree 			    
-✓	03. (MCF) MinCostFlow 			    
+✓	01. RMQ - RangeMinimumQueries 	
+✓	02. ST - SegmentTree 			    
+✓	03. MCMF - MinCostMaxFlow 			    
 ✓	04. MaximumFlow
 ✓	05. Dijkstra
-✓	06. (DSU) DisjointSet 			    
-✓	07. (LCA) LowestCommonAncestor 	
+✓	06. DSU - DisjointSet 			    
+✓	07. LCA - LowestCommonAncestor 	
 ✓	08. EulerianPath	
+✓	09. ConvexHull
+	10. BridgesAndCuts
+	11. MM - MaximumMatching
+	12. MatrixMultiplication
+	13. TopoSorting
