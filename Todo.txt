@@ -1,14 +1,15 @@
-✓	01. RMQ - RangeMinimumQueries 	
-✓	02. ST - SegmentTree 			    
-✓	03. MCMF - MinCostMaxFlow 			    
-✓	04. MaximumFlow
-✓	05. Dijkstra
-✓	06. DSU - DisjointSet 			    
-✓	07. LCA - LowestCommonAncestor 	
-✓	08. EulerianPath	
-✓	09. ConvexHull
-✓	10. Hashing
-	11. BridgesAndCuts
+	01. BIT - FenwickTree
+	02. BridgesAndCuts
+✓	03. ConvexHull
+✓	04. Dijkstra
+✓	05. DSU - DisjointSet 
+✓	06. EulerianPath
+✓	07. Hashing
+✓	08. LCA - LowestCommonAncestor 
+	09. MatrixMultiplication
+✓	10. MaximumFlow
+✓	11. MCMF - MinCostMaxFlow 
 	12. MM - MaximumMatching
-	13. MatrixMultiplication
-	14. TopoSorting
+✓	13. RMQ - RangeMinimumQueries 
+✓	14. ST - SegmentTree 
+	15. TopoSorting
