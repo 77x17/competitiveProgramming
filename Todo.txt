@@ -7,7 +7,8 @@
 ✓	07. LCA - LowestCommonAncestor 	
 ✓	08. EulerianPath	
 ✓	09. ConvexHull
-	10. BridgesAndCuts
-	11. MM - MaximumMatching
-	12. MatrixMultiplication
-	13. TopoSorting
+✓	10. Hashing
+	11. BridgesAndCuts
+	12. MM - MaximumMatching
+	13. MatrixMultiplication
+	14. TopoSorting
