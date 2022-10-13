@@ -1,15 +1,15 @@
-	01. BIT - FenwickTree
-	02. BridgesAndCuts
-✓	03. ConvexHull
+✓	01. BIT - Binary Indexed Tree
+	02. Bridges And Cuts
+✓	03. Convex Hull
 ✓	04. Dijkstra
-✓	05. DSU - DisjointSet 
-✓	06. EulerianPath
+✓	05. DSU - Disjoint Set 
+✓	06. Eulerian Path
 ✓	07. Hashing
-✓	08. LCA - LowestCommonAncestor 
-	09. MatrixMultiplication
-✓	10. MaximumFlow
-✓	11. MCMF - MinCostMaxFlow 
-	12. MM - MaximumMatching
-✓	13. RMQ - RangeMinimumQueries 
-✓	14. ST - SegmentTree 
-	15. TopoSorting
+✓	08. LCA - Lowest Common Ancestor 
+✓	09. Matrix Multiplication
+✓	10. Maximum Flow
+✓	11. MCMF - Minimum Cost Maximum Flow 
+	12. MM - Maximum Matching
+✓	13. RMQ - Range Minimum Queries 
+✓	14. ST - Segment Tree 
+	15. Topological Sorting
