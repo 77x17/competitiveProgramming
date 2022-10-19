@@ -1,5 +1,5 @@
 ✓	01. BIT - Binary Indexed Tree
-	02. Bridges And Cuts
+✓	02. Bridges And Cuts
 ✓	03. Convex Hull
 ✓	04. Dijkstra
 ✓	05. DSU - Disjoint Set 

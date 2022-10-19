@@ -15,7 +15,7 @@ struct point {
     }
 };
 
-// (+) => counter clockwise | (-) => clockwise
+// (+) => counter clockwise | (-) => follow clockwise
 int crossProduct(point O, point A, point B) {
     return (A.x - O.x) * (B.y - O.y) - (A.y - O.y) * (B.x - O.x);
 }
