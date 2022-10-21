@@ -38,7 +38,6 @@ void Dfs(int u) {
             low[u] = min(low[u], low[v]);
 
             if (low[v] > id[u]) isBridge[i] = true;
-
             if (low[v] >= id[u]) isCut[u] = true;
         } else low[u] = min(low[u], id[v]);
     }

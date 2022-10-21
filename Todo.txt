@@ -9,7 +9,7 @@
 ✓	09. Matrix Multiplication
 ✓	10. Maximum Flow
 ✓	11. MCMF - Minimum Cost Maximum Flow 
-	12. MM - Maximum Matching
+✓	12. MM - Maximum Matching
 ✓	13. RMQ - Range Minimum Queries 
 ✓	14. ST - Segment Tree 
 	15. Topological Sorting
