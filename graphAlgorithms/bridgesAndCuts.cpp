@@ -15,39 +15,40 @@ void Input() {
     for (int i = 1; i <= m; i++) {
         int u, v; cin >> u >> v;
 
-        adj[u].push_back(make_pair(v, i)); adj[v].push_back(make_pair(u, i));
+        adj[u].emplace_back(v, i); adj[v].emplace_back(u, i);
     }
 }
 
-int cnt = 0, low[MAX_N], id[MAX_N], nChild[MAX_N];
+int dfs_time = 0, low[MAX_N], num[MAX_N], nChild[MAX_N];
 bool visited[MAX_N], isCut[MAX_N], isBridge[MAX_N];
 
 void Dfs(int u) {
-    id[u] = ++cnt;
+    num[u] = ++dfs_time;
 
     for (edge x : adj[u]) if (not visited[x.se]) {
         int v = x.fi, i = x.se;
 
         visited[i] = true;
 
-        if (id[v] == 0) {
+        if (num[v] == 0) {
             nChild[u]++;
 
             Dfs(v);
 
             low[u] = min(low[u], low[v]);
 
-            if (low[v] > id[u]) isBridge[i] = true;
-            if (low[v] >= id[u]) isCut[u] = true;
-        } else low[u] = min(low[u], id[v]);
+            if (low[v] > num[u]) isBridge[i] = true;
+
+            if (low[v] >= num[u]) isCut[u] = true;
+        } else low[u] = min(low[u], num[v]);
     }
 }
 
 void Process() {
-    fill(low + 1, low + n + 1, n + 1); fill(id + 1, id + n + 1, 0); fill(nChild + 1, nChild + n + 1, 0);
+    fill(low + 1, low + n + 1, n + 1); fill(num + 1, num + n + 1, 0); fill(nChild + 1, nChild + n + 1, 0);
     fill(visited + 1, visited + m + 1, false); fill(isCut + 1, isCut + n + 1, false); fill(isBridge + 1, isBridge + m + 1, false);
 
-    for (int i = 1; i <= n; i++) if (id[i] == 0) {
+    for (int i = 1; i <= n; i++) if (num[i] == 0) {
         Dfs(i);
 
         if (nChild[i] == 1) isCut[i] = false;
