@@ -4,9 +4,9 @@ using namespace std;
 
 const int INF = 1e9 + 77 * 17;
 
-const int MAX_N = 100000 + 77 * 17;
+const int MAX_N = 200000 + 77 * 17;
 
-const int LOG = log(MAX_N) / log(2) + 1;
+const int LOG = 20;
 
 
 int n, arr[MAX_N];
