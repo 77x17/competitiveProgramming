@@ -31,7 +31,7 @@ int main() {
 	for (int i = 1; i <= n; i++) if (not visited[i]) Dfs(i);
 	reverse(topoList.begin(), topoList.end());
 
-	d.assign(n + 1,  0); d[1] = 1;
+	d.assign(n + 1, 0); d[1] = 1;
 	for (int u : topoList) {
 		for (int v : adj[u]) if (d[u] != 0) {
 			if ((d[v] += d[u]) >= MOD) d[v] -= MOD;
