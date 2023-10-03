@@ -1,5 +1,5 @@
 # Matrices
-    # Matrix Multiplication
+    Matrix Multiplication
 
 # Flows and Cuts
     Maximum Matching
@@ -10,6 +10,7 @@
     Dijkstra
     Bellman-Ford
     Floyd-Warshall
+    
     Disjoint Set 
     Lowest Common Ancestor 
     Tarjian
