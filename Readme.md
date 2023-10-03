@@ -1,5 +1,5 @@
 # Matrices
-    Matrix Multiplication
+    * Matrix Multiplication
 
 # Flows and Cuts
     Maximum Matching
