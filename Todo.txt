@@ -13,3 +13,4 @@
 13. Range Minimum Queries 
 14. Segment Tree 
 15. Bellman-Ford
+16. Floyd-Warshall
