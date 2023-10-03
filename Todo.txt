@@ -1,7 +1,7 @@
 Matrices
     Matrix Multiplication
 
-Flows And Cuts
+Flows and Cuts
     Maximum Matching
     Maximum Flow Minimum Cost  
     Maximum Flow
@@ -13,11 +13,20 @@ Graph Algorithms
     
     Disjoint Set 
 
-01. Binary Indexed Tree
-02. Bridges And Cuts
-03. Convex Hull
-06. Eulerian Path
-07. Hashing
-08. Lowest Common Ancestor 
-13. Range Minimum Queries 
-14. Segment Tree 
+    Lowest Common Ancestor 
+    Tarjian
+    Bridges And Cuts
+
+Paths and Circuits    
+    Eulerian Path
+
+Range Queries
+    Binary Indexed Tree
+    Range Minimum Queries 
+    Segment Tree
+
+String
+    Hashing
+
+Sweepline Algorithms
+    Convex Hull
