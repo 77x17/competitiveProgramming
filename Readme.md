@@ -15,6 +15,7 @@
     Lowest Common Ancestor 
     Tarjian
     Bridges And Cuts
+    Topological Sorting
 
 # Paths and Circuits    
     Eulerian Path
