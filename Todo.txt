@@ -1,15 +1,15 @@
-✓	01. BIT - Binary Indexed Tree
-✓	02. Bridges And Cuts
-✓	03. Convex Hull
-✓	04. Dijkstra
-✓	05. DSU - Disjoint Set 
-✓	06. Eulerian Path
-✓	07. Hashing
-✓	08. LCA - Lowest Common Ancestor 
-✓	09. Matrix Multiplication
-✓	10. Maximum Flow
-✓	11. MCMF - Minimum Cost Maximum Flow 
-✓	12. MM - Maximum Matching
-✓	13. RMQ - Range Minimum Queries 
-✓	14. ST - Segment Tree 
-	15. Topological Sorting
+01. Binary Indexed Tree
+02. Bridges And Cuts
+03. Convex Hull
+04. Dijkstra
+05. Disjoint Set 
+06. Eulerian Path
+07. Hashing
+08. Lowest Common Ancestor 
+09. Matrix Multiplication
+10. Maximum Flow
+11. Minimum Cost Maximum Flow 
+12. Maximum Matching
+13. Range Minimum Queries 
+14. Segment Tree 
+15. Bellman-Ford
