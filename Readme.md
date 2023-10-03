@@ -1,12 +1,12 @@
-Matrices
+Matrices:
     Matrix Multiplication
 
-Flows and Cuts
+Flows and Cuts:
     Maximum Matching
     Maximum Flow Minimum Cost  
     Maximum Flow
 
-Graph Algorithms
+Graph Algorithms:
     Dijkstra
     Bellman-Ford
     Floyd-Warshall
@@ -15,16 +15,16 @@ Graph Algorithms
     Tarjian
     Bridges And Cuts
 
-Paths and Circuits    
+Paths and Circuits:    
     Eulerian Path
 
-Range Queries
+Range Queries:
     Binary Indexed Tree
     Range Minimum Queries 
     Segment Tree
 
-String
+String:
     Hashing
 
-Sweepline Algorithms
+Sweepline Algorithms:
     Convex Hull
