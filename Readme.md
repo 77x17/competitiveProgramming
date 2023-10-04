@@ -1,4 +1,4 @@
-# [Geometry](/tree/main/Geometry)
+# [Geometry](https://github.com/77x17/competitiveProgramming/tree/main/Geometry)
     Convex Hull
     
 # Matrices
