@@ -1,3 +1,6 @@
+# Geometry
+    Convex Hull
+    
 # Matrices
     Matrix Multiplication
 
@@ -25,8 +28,6 @@
     Range Minimum Queries 
     Segment Tree
 
-# String
+# String Algorithms
     Hashing
 
-# Geometry
-    Convex Hull
