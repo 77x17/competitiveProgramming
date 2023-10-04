@@ -15,6 +15,7 @@
     Floyd-Warshall
     
     Disjoint Set 
+    Binary Lifting
     Lowest Common Ancestor 
     Tarjian
     Bridges And Cuts
