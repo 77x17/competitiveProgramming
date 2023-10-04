@@ -28,5 +28,5 @@
 # String
     Hashing
 
-# Linear Algorithms:
+# Geometry
     Convex Hull
