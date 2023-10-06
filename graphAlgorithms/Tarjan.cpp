@@ -1,63 +1,70 @@
-#include <bits/stdc++.h>
-using namespace std;
-
-const int MAX_N = (int)1e4 + 1;
-
+#include <iostream>
+#include <vector>
+ 
+const int MAX_N = 1e5 + 1;
+ 
 int n, m;
-vector<int> adj[MAX_N];
-
-void Input() {
-    cin >> n >> m;
-    for (int i = 1; i <= m; i++) {
-        int u, v; cin >> u >> v;
-
-        adj[u].push_back(v);
-    }
-}
-
-stack<int> s;
-int result = 0, dfs_time = 0, low[MAX_N], num[MAX_N];
-
+std::vector<int> adj[MAX_N];
+ 
+int dfsTime;
+int low[MAX_N];
+int num[MAX_N];
+std::vector<int> s;
+ 
+int nConnect;
+std::vector<int> connect[MAX_N];
+ 
+int kingdomID[MAX_N];
+ 
 void Dfs(int u) {
-    low[u] = num[u] = ++dfs_time;
-    s.push(u);
-
-    for (int v : adj[u]) {
-        if (num[v] == 0) {
-            Dfs(v);
-
-            low[u] = min(low[u], low[v]);
-        } else low[u] = min(low[u], num[v]);
-    }
-
-    if (low[u] == num[u]) {
-        result++;
-
-        int v;
-
-        do {
-            v = s.top(), s.pop();
-
-            low[v] = num[v] = n + 1;
-        } while (v != u);
-    }
+	low[u] = num[u] = ++dfsTime;
+	s.push_back(u);
+ 
+	for (int v : adj[u]) {
+		if (num[v] == 0) {
+			Dfs(v);
+ 
+			low[u] = std::min(low[u], low[v]);
+		} else low[u] = std::min(low[u], num[v]);
+	}
+ 
+	if (low[u] == num[u]) {
+		for (int v = -1; v != u;) {
+			v = s.back(); s.pop_back();
+ 
+			low[v] = num[v] = n + 1;
+ 
+			connect[nConnect].push_back(v);
+		}
+ 
+		nConnect++;
+	}
 }
-
-void Process() {
-    fill(low + 1, low + n + 1, n + 1);
-    fill(num + 1, num + n + 1, 0);
-
-    for (int i = 1; i <= n; i++) if (num[i] == 0) Dfs(i);
-
-    cout << result << '\n';
-}
-
+ 
+void Tarjan() {
+	dfsTime = 0;
+	nConnect = 0;
+	for (int i = 1; i <= n; i++) if (num[i] == 0) Dfs(i);
+}	
+ 
 int main() {
-    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-
-    Input();
-
-    Process();
-
-    return 0;
-}
+	std::ios_base::sync_with_stdio(0), std::cin.tie(0), std::cout.tie(0);
+	if (fopen("Input.txt", "r")) freopen("Input.txt", "r", stdin);
+ 
+	std::cin >> n >> m;
+	while (m--) {
+		int u, v; std::cin >> u >> v;
+		adj[u].push_back(v);
+	}
+ 
+	Tarjan();
+ 
+	for (int i = 0; i < nConnect; i++) {
+		for (int x : connect[i]) kingdomID[x] = i + 1;
+	}
+ 
+	std::cout << nConnect << '\n';
+ 
+	for (int i = 1; i <= n; i++) std::cout << kingdomID[i] << ' ';
+	
+	return 0;
