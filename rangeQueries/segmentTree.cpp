@@ -4,13 +4,8 @@ const int MAX_N = 2e5 + 1;
 const long long INF = 1e18 + 7;
 
 struct SegmentTree {
-    int n;
     long long  val[4 * MAX_N];
     long long lazy[4 * MAX_N];
-
-    void Init(int _n) {
-        n = _n;
-    }
 
     void pushDown(int id) {
          val[2 * id] += lazy[id];  val[2 * id + 1] += lazy[id];
@@ -59,7 +54,6 @@ int main() {
     std::cin >> n >> m;
     for (int i = 1; i <= n; i++) std::cin >> arr[i];    
 
-    ST.Init(n);
     for (int i = 1; i <= n; i++) ST.Update(1, 1, n, i, i, arr[i]);
 
     while (m--) {
