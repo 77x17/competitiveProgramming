@@ -10,11 +10,10 @@ struct SegmentTree {
     void pushDown(int id) {
          val[2 * id] += lazy[id];  val[2 * id + 1] += lazy[id];
         lazy[2 * id] += lazy[id]; lazy[2 * id + 1] += lazy[id];
-
         lazy[id] = 0;
     }
 
-    void Update(int id, int l, int r, int u, int v, int c) {
+    void Update(int id, int l, int r, int u, int v, long long c) {
         if (r <  u || v <  l) return;
         if (u <= l && r <= v) {
              val[id] += c;
