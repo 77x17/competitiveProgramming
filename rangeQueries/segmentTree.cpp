@@ -1,100 +1,78 @@
-#include <bits/stdc++.h>
+#include <iostream>
 
-using namespace std;
-
+const int MAX_N = 2e5 + 1;
 const long long INF = 1e18 + 7;
 
+struct SegmentTree {
+    int n;
+    long long  val[4 * MAX_N];
+    long long lazy[4 * MAX_N];
 
-class SegmentTree {
-private:
-    int n;  vector<long long> tree, lazy;
+    void Init(int _n) {
+        n = _n;
+    }
 
     void pushDown(int id) {
-        tree[2 * id] += lazy[id];  tree[2 * id + 1] += lazy[id];
-
-        lazy[2 * id] += lazy[id];  lazy[2 * id + 1] += lazy[id];
+         val[2 * id] += lazy[id];  val[2 * id + 1] += lazy[id];
+        lazy[2 * id] += lazy[id]; lazy[2 * id + 1] += lazy[id];
 
         lazy[id] = 0;
     }
 
-    void update(int id, int l, int r, int u, int v, int val) {
-        if (r < u || v < l) return;
-
+    void Update(int id, int l, int r, int u, int v, int c) {
+        if (r <  u || v <  l) return;
         if (u <= l && r <= v) {
-            tree[id] += val;  lazy[id] += val;  return;
+             val[id] += c;
+            lazy[id] += c;
+            return;
         }
 
         pushDown(id);
 
-        int mid = (l + r) / 2;
-
-        update(2 * id, l, mid, u, v, val);  update(2 * id + 1, mid + 1, r, u, v, val);
-
-        tree[id] = max(tree[2 * id], tree[2 * id + 1]);
+        int mid = (l + r) >> 1;
+        Update(2 * id    , l      , mid, u, v, c);
+        Update(2 * id + 1, mid + 1, r  , u, v, c);
+        val[id] = std::min(val[2 * id], val[2 * id + 1]);
     }
 
-    long long getmax(int id, int l, int r, int u, int v) {
-        if (r < u || v < l) return -INF;
-
-        if (u <= l && r <= v) return tree[id];
+    long long Query(int id, int l, int r, int u, int v) {
+        if (r <  u || v <  l) return INF;
+        if (u <= l && r <= v) return val[id];  
 
         pushDown(id);
 
-        int mid = (l + r) / 2;
-
-        long long a = getmax(2 * id, l, mid, u, v),  b = getmax(2 * id + 1, mid + 1, r, u, v);
-
-        return max(a, b);
+        int mid = (l + r) >> 1;
+        return std::min(
+            Query(2 * id    , l      , mid, u, v),
+            Query(2 * id + 1, mid + 1, r  , u, v)
+        );
     }
-public:
-    SegmentTree(int n = 0): n(n) {
-        tree.assign(4 * n + 1, 0);  lazy.assign(4 * n + 1, 0);
-    }
-
-    void update(int u, int v, long long val) {update(1, 1, n, u, v, val);}
-
-    long long getmax(int u, int v) {return getmax(1, 1, n, u, v);}
 } ST;
 
-
-int n;  vector<int> arr;
-
-void Input() {
-    cin >> n;  arr.assign(n + 1, 0);
-
-    for (int i = 1; i <= n; i++) cin >> arr[i];
-}
-
-
-void Process() {
-    ST = SegmentTree(n);
-
-    for (int i = 1; i <= n; i++) ST.update(i, i, arr[i]);
-
-    int q; cin >> q; while (q--) {
-        int e; cin >> e;
-
-        if (e == 1) {
-            int x, y, val; cin >> x >> y >> val;
-
-            ST.update(x, y, val);
-        } else {
-            int x, y; cin >> x >> y;
-
-            cout << ST.getmax(x, y) << '\n';
-        }
-    }
-}
-
+int n, m;
+int arr[MAX_N];
 
 int main() {
-    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+    std::ios_base::sync_with_stdio(0), std::cin.tie(0), std::cout.tie(0);
+    if (fopen("Input.txt", "r")) freopen("Input.txt", "r", stdin);
 
-    Input();
+    std::cin >> n >> m;
+    for (int i = 1; i <= n; i++) std::cin >> arr[i];    
 
-    Process();
+    ST.Init(n);
+    for (int i = 1; i <= n; i++) ST.Update(1, 1, n, i, i, arr[i]);
+
+    while (m--) {
+        int t; std::cin >> t;
+
+        if (t == 1) {
+            int u, v, c; std::cin >> u >> v >> c;
+            ST.Update(1, 1, n, u, v, c);
+        } else if (t == 2) {
+            int u; std::cin >> u;
+            std::cout << ST.Query(1, 1, n, u, u) << '\n';
+        }
+    }
 
     return 0;
 }
-
-/* https://oj.vnoi.info/problem/segtree_itlazy */
