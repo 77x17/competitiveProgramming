@@ -9,11 +9,14 @@ int par[MAX_N + 1][LOG + 1];
 std::vector<int> adj[MAX_N + 1];
 
 int high[MAX_N + 1];
+int dist[MAX_N + 1];
 
 void Dfs(int u) {
 	for (int v : adj[u]) {
 		if (v != par[u][0]) {
 			high[v] = high[u] + 1;
+			dist[v] = dist[u] + 1;
+			par[v][0] = u;
 			Dfs(v);	
 		}
 	}
@@ -37,8 +40,10 @@ int main() {
 
 	std::cin >> n >> m;
 	for (int i = 2; i <= n; i++) {
-		std::cin >> par[i][0];
-		adj[par[i][0]].push_back(i);
+		int u, v;
+		std::cin >> u >> v;
+		adj[u].push_back(v);
+		adj[v].push_back(u);
 	}
 
 	high[0] = -1; 
@@ -53,6 +58,6 @@ int main() {
 		int u, v;
 		std::cin >> u >> v;
 
-		std::cout << find_LCA(u, v) << '\n';
+		std::cout << dist[u] + dist[v] - 2 * dist[find_LCA(u, v)] << '\n';
 	}
 }
